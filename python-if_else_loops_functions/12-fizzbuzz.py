@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 def fizzbuzz():
+    """Prints numbers 1 to 100 with FizzBuzz logic."""
     for i in range(1, 101):
         if i % 3 == 0 and i % 5 == 0:
             print("FizzBuzz", end="")
@@ -9,7 +10,5 @@ def fizzbuzz():
             print("Buzz", end="")
         else:
             print("{}".format(i), end="")
-        
-        if i < 100:
-            print(" ", end="")
-    print()
+
+        print(" ", end="")
