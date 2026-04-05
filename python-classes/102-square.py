@@ -1,18 +1,35 @@
+#!/usr/bin/python3
+"""
+This module defines a Square class with rich comparison operators.
+Comparisons are based on the area of the squares.
+"""
+
+
 class Square:
-    """Defines a square by size with area-based comparisons."""
+    """
+    Represents a square.
+
+    Attributes:
+        size (int or float): The side length of the square.
+    """
 
     def __init__(self, size=0):
-        """Initialize the square with a given size."""
+        """
+        Initializes a new Square.
+
+        Args:
+            size (number): The size of the square side.
+        """
         self.size = size
 
     @property
     def size(self):
-        """Retrieve the size of the square."""
+        """Retrieves the size of the square."""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Set the size of the square with type and value validation."""
+        """Sets the size of the square with validation."""
         if not isinstance(value, (int, float)):
             raise TypeError("size must be a number")
         if value < 0:
@@ -20,30 +37,29 @@ class Square:
         self.__size = value
 
     def area(self):
-        """Calculate and return the current square area."""
+        """Returns the current square area."""
         return self.__size ** 2
 
-    # Rich Comparison Methods
     def __eq__(self, other):
-        """Check if area is equal to another square's area."""
+        """Compare if two squares are equal in area."""
         return self.area() == other.area()
 
     def __ne__(self, other):
-        """Check if area is not equal to another square's area."""
+        """Compare if two squares are not equal in area."""
         return self.area() != other.area()
 
     def __lt__(self, other):
-        """Check if area is less than another square's area."""
+        """Compare if one square is less than another in area."""
         return self.area() < other.area()
 
     def __le__(self, other):
-        """Check if area is less than or equal to another square's area."""
+        """Compare if one square is less than or equal in area."""
         return self.area() <= other.area()
 
     def __gt__(self, other):
-        """Check if area is greater than another square's area."""
+        """Compare if one square is greater than another in area."""
         return self.area() > other.area()
 
     def __ge__(self, other):
-        """Check if area is greater than or equal to another square's area."""
+        """Compare if one square is greater than or equal in area."""
         return self.area() >= other.area()
