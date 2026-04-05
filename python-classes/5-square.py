@@ -3,24 +3,24 @@
 
 
 class Square:
-    """Class that defines a square by size, area, and printing capability."""
+    """Class that defines a square by its size and can print it."""
 
     def __init__(self, size=0):
-        """Initializes a new Square.
+        """Initializes a new Square instance.
 
         Args:
-            size (int): The length of a side of the square. Defaults to 0.
+            size (int): The length of a side of the square.
         """
         self.size = size
 
     @property
     def size(self):
-        """Retrieves the size of the square."""
+        """Retrieves the private instance attribute size."""
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Sets the size of the square with type and value validation.
+        """Sets the private instance attribute size with validation.
 
         Args:
             value (int): The new size of the square.
@@ -39,18 +39,17 @@ class Square:
         """Calculates and returns the current square area.
 
         Returns:
-            int: The area of the square.
+            The area of the square (size squared).
         """
-        return self.__size * self.__size
+        return self.__size ** 2
 
     def my_print(self):
         """Prints the square with the # character to stdout.
-        
+
         If size is 0, prints an empty line.
         """
         if self.__size == 0:
-            print("")
-            return
-
-        for i in range(self.__size):
-            print("#" * self.__size)
+            print()
+        else:
+            for i in range(self.__size):
+                print("#" * self.__size)
