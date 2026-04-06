@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 import sys
 
+
 def safe_print_integer_err(value):
 
     try:
-        # Pass value directly to the formatter
-        print("{:d}".format(value))
+        print("{:d}".format(int(value)))
         return True
-    except Exception as e:
-        # Capture the actual exception object 'e' and print it to stderr
-        sys.stderr.write("Exception: {}\n".format(e))
+    except ValueError:
+        print("Exception: Cannot print as integer", file=sys.stderr)
         return False
