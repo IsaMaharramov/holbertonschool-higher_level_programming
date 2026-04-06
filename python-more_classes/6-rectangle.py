@@ -1,4 +1,4 @@
-#!/  usr/bin/python3
+#!/usr/bin/python3
 """
 This module defines a Rectangle class that tracks the number of instances.
 """

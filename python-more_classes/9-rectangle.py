@@ -46,24 +46,27 @@ class Rectangle:
 
     def area(self):
         """Returns the rectangle area."""
-        return self.__width * self.__height
+        return self.width * self.height
 
     def perimeter(self):
         """Returns the rectangle perimeter."""
-        if self.__width == 0 or self.__height == 0:
+        if self.width == 0 or self.height == 0:
             return 0
-        return (self.__width * 2) + (self.__height * 2)
+        return (self.width * 2) + (self.height * 2)
 
     def __str__(self):
         """Returns string representation of the rectangle."""
-        if self.__width == 0 or self.__height == 0:
+        if self.width == 0 or self.height == 0:
             return ""
-        row = str(self.print_symbol) * self.__width
-        return "\n".join([row for _ in range(self.__height)])
+        # Using self.print_symbol allows instance-level overrides
+        rect_lines = []
+        for i in range(self.height):
+            rect_lines.append(str(self.print_symbol) * self.width)
+        return "\n".join(rect_lines)
 
     def __repr__(self):
         """Returns string representation to recreate the instance."""
-        return "Rectangle({}, {})".format(self.__width, self.__height)
+        return "Rectangle({:d}, {:d})".format(self.width, self.height)
 
     def __del__(self):
         """Decrements instance counter and prints message on deletion."""
@@ -83,10 +86,5 @@ class Rectangle:
 
     @classmethod
     def square(cls, size=0):
-        """
-        Returns a new Rectangle instance with width == height == size.
-
-        Args:
-            size (int): The side length of the square.
-        """
+        """Returns a new Rectangle instance with width == height == size."""
         return cls(size, size)
