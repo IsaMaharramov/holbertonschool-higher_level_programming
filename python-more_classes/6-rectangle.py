@@ -5,7 +5,7 @@ This module defines a Rectangle class that tracks the number of instances.
 
 
 class Rectangle:
-    """Defines a rectangle by width and height and tracks instance count."""
+    """Defines a rectangle by width/height and tracks instance count."""
 
     # Public class attribute
     number_of_instances = 0
@@ -65,6 +65,6 @@ class Rectangle:
         return "Rectangle({}, {})".format(self.__width, self.__height)
 
     def __del__(self):
-        """Prints a message and decrements the instance counter upon deletion."""
+        """Prints a message and decrements the counter upon deletion."""
         Rectangle.number_of_instances -= 1
         print("Bye rectangle...")

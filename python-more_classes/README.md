@@ -14,14 +14,14 @@
 [Python's str() vs. repr()](https://shipit.dev/posts/python-str-vs-repr.html)
 
 ## Project Overview
-This repository contains a series of exercises focused on **Object-Oriented Programming (OOP)** in Python. The goal is to build a robust `Rectangle` class from scratch, incrementally adding advanced features like data validation, property decorators, magic methods, class attributes, and static/class methods.
+This project is a deep dive into **Object-Oriented Programming (OOP)** in Python. The goal is to build a robust `Rectangle` class from the ground up, incrementally adding features like data validation, property decorators, magic methods, class attributes, and factory methods.
 
 ## Learning Objectives
 * **Encapsulation:** Protecting attributes using private variables (`__width`, `__height`).
-* **Properties:** Using `@property` and `@width.setter` for data validation.
-* **Magic Methods:** Implementing `__str__`, `__repr__`, and `__del__`.
-* **Class vs Instance:** Managing state with class attributes (`number_of_instances`).
-* **Method Types:** Using `@staticmethod` for utility and `@classmethod` for factories (e.g., `square`).
+* **Data Validation:** Using `@property` and `@setter` to enforce type and value constraints.
+* **Magic Methods:** Implementing `__str__` for user-friendly printing, `__repr__` for object recreation, and `__del__` for lifecycle management.
+* **Class vs Instance Attributes:** Managing shared state with `number_of_instances` and `print_symbol`.
+* **Static & Class Methods:** Using `@staticmethod` for logic comparison and `@classmethod` for factory instantiation (e.g., creating a square).
 
 ---
 
@@ -29,16 +29,16 @@ This repository contains a series of exercises focused on **Object-Oriented Prog
 
 | File | Task | Key Features Added |
 | :--- | :--- | :--- |
-| `0-rectangle.py` | Simple rectangle | Empty class definition. |
+| `0-rectangle.py` | Simple rectangle | Basic empty class definition. |
 | `1-rectangle.py` | Real definition | Private attributes with type/value validation. |
-| `2-rectangle.py` | Area and Perimeter | Public instance methods for calculations. |
-| `3-rectangle.py` | String representation | `print()` support using `#`. |
+| `2-rectangle.py` | Area and Perimeter | Public instance methods for geometric calculations. |
+| `3-rectangle.py` | String representation | `str()` and `print()` support using the `#` character. |
 | `4-rectangle.py` | Eval-ready | `repr()` support to recreate instances via `eval()`. |
-| `5-rectangle.py` | Detect deletion | Destructor (`__del__`) with exit message. |
-| `6-rectangle.py` | How many instances | Class attribute to track active objects. |
-| `7-rectangle.py` | Change symbol | Customizable `print_symbol` for the string representation. |
+| `5-rectangle.py` | Detect deletion | Destructor (`__del__`) with a "Bye rectangle..." message. |
+| `6-rectangle.py` | Instance Tracking | Class attribute to track the number of active objects. |
+| `7-rectangle.py` | Change symbol | Customizable `print_symbol` for string representation. |
 | `8-rectangle.py` | Compare rectangles | Static method to find the larger rectangle by area. |
-| `9-rectangle.py` | A square is a rectangle | Class method factory to create a square. |
+| `9-rectangle.py` | Square factory | Class method to create a Square (Rectangle with equal sides). |
 
 ---
 
@@ -49,11 +49,14 @@ This repository contains a series of exercises focused on **Object-Oriented Prog
 - **Constraints:** No external modules imported.
 
 ## Usage
-To test any of the classes, use the provided main files:
+To test the functionality of the final class (Task 9):
 
 ```bash
-# Example: Testing the final Rectangle class (Task 9)
-python3 9-main.py
+# Ensure the file is executable
+chmod +x 9-main.py 9-rectangle.py
+
+# Run the test script
+./9-main.py
 ```
 
 ## Example Code
@@ -63,16 +66,10 @@ Rectangle = __import__('9-rectangle').Rectangle
 # Create a square using the class method factory
 my_square = Rectangle.square(5)
 
-print(f"Area: {my_square.area()}")
+print(f"Area: {my_square.area()} - Perimeter: {my_square.perimeter()}")
 print(my_square)
-# Output:
-# Area: 25
-# #####
-# #####
-# #####
-# #####
-# #####
-```
 
-## Author
-* [Isa Maharramov](https://github.com/IsaMaharramov)
+# Change the symbol for this instance
+my_square.print_symbol = "&"
+print(my_square)
+```

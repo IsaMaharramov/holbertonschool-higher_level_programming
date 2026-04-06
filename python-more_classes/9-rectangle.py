@@ -5,7 +5,7 @@ This module defines a Rectangle class with a class method to create a square.
 
 
 class Rectangle:
-    """Defines a rectangle with instance tracking, comparison, and a square factory."""
+    """Defines a rectangle with tracking, comparison, and square factory."""
 
     number_of_instances = 0
     print_symbol = "#"
@@ -58,7 +58,6 @@ class Rectangle:
         """Returns string representation of the rectangle."""
         if self.width == 0 or self.height == 0:
             return ""
-        # Using self.print_symbol allows instance-level overrides
         rect_lines = []
         for i in range(self.height):
             rect_lines.append(str(self.print_symbol) * self.width)
