@@ -10,8 +10,8 @@ def complex_delete(a_dictionary, value):
     Returns:
         The modified dictionary (or the original if value not found).
     """
-    # Create a list of keys to delete to avoid "RuntimeError: dictionary 
-    # changed size during iteration"
+    # Create a list of keys to delete to avoid "RuntimeError: dictionary"
+    # changed size during iteration
     keys_to_delete = [k for k, v in a_dictionary.items() if v == value]
 
     for key in keys_to_delete:

@@ -2,10 +2,10 @@
 def weight_average(my_list=[]):
     """
     Returns the weighted average of all integers in a list of tuples.
-    
+
     Args:
         my_list: A list of tuples in the format (<score>, <weight>).
-        
+
     Returns:
         The weighted average, or 0 if the list is empty.
     """
