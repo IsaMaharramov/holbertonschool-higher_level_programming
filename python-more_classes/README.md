@@ -14,14 +14,15 @@
 [Python's str() vs. repr()](https://shipit.dev/posts/python-str-vs-repr.html)
 
 ## Project Overview
-This project is a deep dive into **Object-Oriented Programming (OOP)** in Python. The goal is to build a robust `Rectangle` class from the ground up, incrementally adding features like data validation, property decorators, magic methods, class attributes, and factory methods.
+This repository focuses on **Object-Oriented Programming (OOP)** and **Algorithmic Problem Solving** in Python. It documents the evolution of a `Rectangle` class—from a simple empty definition to a complex object with data validation and factory methods—and concludes with a backtracking solution for the classic **N Queens puzzle**.
 
 ## Learning Objectives
 * **Encapsulation:** Protecting attributes using private variables (`__width`, `__height`).
 * **Data Validation:** Using `@property` and `@setter` to enforce type and value constraints.
-* **Magic Methods:** Implementing `__str__` for user-friendly printing, `__repr__` for object recreation, and `__del__` for lifecycle management.
-* **Class vs Instance Attributes:** Managing shared state with `number_of_instances` and `print_symbol`.
-* **Static & Class Methods:** Using `@staticmethod` for logic comparison and `@classmethod` for factory instantiation (e.g., creating a square).
+* **Magic Methods:** Implementing `__str__`, `__repr__`, and `__del__` for object lifecycle and representation.
+* **Class vs Instance Attributes:** Managing shared state (e.g., `number_of_instances`).
+* **Static & Class Methods:** Using `@staticmethod` for logic and `@classmethod` for factories.
+* **Backtracking Algorithms:** Implementing a recursive solution to solve the N Queens non-attacking placement challenge.
 
 ---
 
@@ -39,14 +40,15 @@ This project is a deep dive into **Object-Oriented Programming (OOP)** in Python
 | `7-rectangle.py` | Change symbol | Customizable `print_symbol` for string representation. |
 | `8-rectangle.py` | Compare rectangles | Static method to find the larger rectangle by area. |
 | `9-rectangle.py` | Square factory | Class method to create a Square (Rectangle with equal sides). |
+| `101-nqueens.py` | N Queens | Backtracking program to solve the N queens puzzle. |
 
 ---
 
 ## Requirements
-- **Language:** Python 3.8.x
-- **Style Guide:** [Pycodestyle](https://pypi.org/project/pycodestyle/) (formerly PEP 8)
-- **Environment:** Ubuntu 20.04 LTS (or similar)
-- **Constraints:** No external modules imported.
+* **Interpreter:** Python 3.8.x
+* **Style Guide:** `pycodestyle` (version 2.8.*)
+* **Environment:** Ubuntu 20.04 LTS
+* **Constraints:** No external modules imported (except `sys` for Task 101).
 
 ## Usage
 To test the functionality of the final class (Task 9):
