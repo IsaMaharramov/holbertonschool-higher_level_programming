@@ -2,19 +2,9 @@
 import sys
 
 def safe_function(fct, *args):
-    """Executes a function safely.
-
-    Args:
-        fct: A pointer to the function to be executed.
-        *args: Variable arguments to pass to fct.
-
-    Returns:
-        The result of the function if successful.
-        None if an exception occurs, with the error printed to stderr.
-    """
     try:
-        result = fct(*args)
-        return result
+        return fct(*args)
     except Exception as e:
-        sys.stderr.write("Exception: {}\n".format(e))
+        # Use print with file=sys.stderr to ensure correct stream handling
+        print("Exception: {}".format(e), file=sys.stderr)
         return None
