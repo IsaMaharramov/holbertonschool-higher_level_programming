@@ -6,41 +6,39 @@ Importing the class and initializing:
     >>> bg = BaseGeometry()
 
 Valid integer inputs:
-    >>> bg.integer_validator("my_int", 12)
-    >>> bg.integer_validator("width", 89)
+    >>> bg.integer_validator("age", 1)
 
 Testing TypeError (Value is not an integer):
 --------------------------------------------
-Note: Booleans are subclasses of integers, but our function must reject them.
-    >>> bg.integer_validator("is_true", True)
+    >>> bg.integer_validator("age", "4")
     Traceback (most recent call last):
         ...
-    TypeError: is_true must be an integer
+    TypeError: age must be an integer
 
-    >>> bg.integer_validator("name", "John")
+    >>> bg.integer_validator("age", (4,))
     Traceback (most recent call last):
         ...
-    TypeError: name must be an integer
+    TypeError: age must be an integer
 
-    >>> bg.integer_validator("weight", 1.5)
+    >>> bg.integer_validator("age", [3])
     Traceback (most recent call last):
         ...
-    TypeError: weight must be an integer
+    TypeError: age must be an integer
 
-    >>> bg.integer_validator("inf", float('inf'))
+    >>> bg.integer_validator("age", True)
     Traceback (most recent call last):
         ...
-    TypeError: inf must be an integer
+    TypeError: age must be an integer
 
-    >>> bg.integer_validator("my_list", [1, 2, 3])
+    >>> bg.integer_validator("age", {3, 4})
     Traceback (most recent call last):
         ...
-    TypeError: my_list must be an integer
+    TypeError: age must be an integer
 
-    >>> bg.integer_validator("none_val", None)
+    >>> bg.integer_validator("age", None)
     Traceback (most recent call last):
         ...
-    TypeError: none_val must be an integer
+    TypeError: age must be an integer
 
 Testing ValueError (Value is <= 0):
 -----------------------------------
@@ -49,10 +47,17 @@ Testing ValueError (Value is <= 0):
         ...
     ValueError: age must be greater than 0
 
-    >>> bg.integer_validator("distance", -5)
+    >>> bg.integer_validator("age", -4)
     Traceback (most recent call last):
         ...
-    ValueError: distance must be greater than 0
+    ValueError: age must be greater than 0
+
+Testing Missing Arguments:
+--------------------------
+    >>> bg.integer_validator("age")
+    Traceback (most recent call last):
+        ...
+    TypeError: integer_validator() missing 1 required positional argument: 'value'
 
 Testing area() exception:
 -------------------------
