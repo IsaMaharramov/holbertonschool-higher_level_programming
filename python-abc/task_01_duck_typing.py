@@ -12,6 +12,7 @@ class Shape(ABC):
     def perimeter(self):
         pass
 
+
 class Circle(Shape):
     def __init__(self, radius):
         self.radius = radius
@@ -21,6 +22,7 @@ class Circle(Shape):
 
     def perimeter(self):
         return 2 * math.pi * self.radius
+
 
 class Rectangle(Shape):
     def __init__(self, width, height):
