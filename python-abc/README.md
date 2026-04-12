@@ -1,0 +1,5 @@
+* [Python 3 Object-Oriented Programming](https://docs.python.org/3/tutorial/classes.html)
+* [ABC — Abstract Base Classes](https://docs.python.org/3/library/abc.html)
+* [Real Python - Object-Oriented Programming (OOP) in Python 3](https://realpython.com/python3-object-oriented-programming/)
+* [Corey Schafer - OOP Playlist](https://www.youtube.com/playlist?list=PL-osiE80TeTsqhIuOqKhwlXsIBIdSeYtc)
+* [Sentdex - Python OOP Tutorial](https://www.youtube.com/playlist?list=PLQVvvaa0QuDfhTF3Zfyzc_yD-Mq9iTp4G)
